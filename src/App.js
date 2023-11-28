@@ -28,8 +28,8 @@ function App() {
 
   //Add Task
   const addTaskHandler = (task) => {
-    const id = Math.floor(Math.random() * 10000) + 1
-    const newTask = { id, ...task }
+    const id = Math.floor(Math.random() * 10000) + 1;
+    const newTask = { id, ...task };
     setTasks([...tasks, newTask]);
   };
 
@@ -47,8 +47,11 @@ function App() {
   };
   return (
     <div>
-      <Header onAdd = {() => setShowAddTask (!showAddTask)} showAdd = {showAddTask}/>
-      {showAddTask && <AddTask onAdd={addTaskHandler}/>}
+      <Header
+        onAdd={() => setShowAddTask(!showAddTask)}
+        showAdd={showAddTask}
+      />
+      {showAddTask && <AddTask onAdd={addTaskHandler} />}
       {tasks.length > 0 ? (
         <Tasks
           tasks={tasks}
