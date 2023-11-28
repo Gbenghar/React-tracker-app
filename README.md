@@ -54,8 +54,13 @@ Users should be able to:
 
 ### What I learned
 I learnt about the use of various React hooks like:
-1) useState
+1) useState as well as lifting state up
 2) useEffect
+3) ### Created functionalities
+- Add/Close Button: Displays dynamically such that when either is clicked, it displays the AddTask Form as needed. When there is nothing to add it shows a close button to close the addtask form area when clicked and when there is a need to add task the Add button shows to display the addtask form.
+- Save Task Button: The Task entered is further diplayed in the Task list
+- Set-Reminder: The Set Reminder check-box indicates a green highlight by the edge of a task showing that its set for reminder and when double-clicked, the highlight is removed
+- Fav-icon: When clicked it removes a task entirely from the list
 
 I would continue to further learn about:
 1) useContext
