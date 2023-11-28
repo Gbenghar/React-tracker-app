@@ -61,6 +61,7 @@ I learnt about the use of various React hooks like:
 - Save Task Button: The Task entered is further diplayed in the Task list
 - Set-Reminder: The Set Reminder check-box indicates a green highlight by the edge of a task showing that its set for reminder and when double-clicked, the highlight is removed
 - Fav-icon: When clicked it removes a task entirely from the list
+4) Added some BackEnd functionality through json server.
 
 I would continue to further learn about:
 1) useContext

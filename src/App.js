@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react'
-import Header from './components/Header'
-import Tasks from './components/Tasks'
+import { useEffect, useState } from 'react'
 import AddTask from './components/AddTask'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Tasks from './components/Tasks'
 
 function App () {
   const [showAddTask, setShowAddTask] = useState(false)
@@ -18,20 +19,20 @@ function App () {
 
   // Fetch Tasks
   const fetchTasks = async () => {
-    const response = await fetch('http://localhost:3001/tasks')
+    const response = await fetch('http://localhost:3000/tasks')
     const data = await response.json()
     return data
   }
   // Fetch Task
   const fetchTask = async id => {
-    const response = await fetch(`http://localhost:3001/tasks/${id}`)
+    const response = await fetch(`http://localhost:3000/tasks/${id}`)
     const data = await response.json()
     return data
   }
 
   //Add Task
   const addTaskHandler = async task => {
-    const response = await fetch('http://localhost:3001/tasks', {
+    const response = await fetch('http://localhost:3000/tasks', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -49,7 +50,7 @@ function App () {
 
   //Delete Task
   const deleteTaskHandler = async id => {
-    await fetch(`http://localhost:3001/tasks/${id}`, {
+    await fetch(`http://localhost:3000/tasks/${id}`, {
       method: 'DELETE'
     })
 
@@ -61,7 +62,7 @@ function App () {
     const taskToToggle = await fetchTask(id)
     const updateTask = { ...taskToToggle, reminder: !taskToToggle.reminder }
 
-    const response = await fetchTask(`http//localhost:3001/tasks/${id}`, {
+    const response = await fetchTask(`http//localhost:3000/tasks/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
@@ -93,6 +94,7 @@ function App () {
       ) : (
         'No Tasks Available'
       )}
+      <Footer/>
     </div>
   )
 }
